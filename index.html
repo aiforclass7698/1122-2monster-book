@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>機密怪獸圖鑑 Monster Lab</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <canvas id="canvas-bg"></canvas>
+
+    <div class="container">
+        <header>
+            <h1>怪獸圖鑑 Monster Lab <span class="subtitle">PROJECT: ORIGIN</span></h1>
+        </header>
+
+        <div class="control-panel">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="搜尋怪獸名稱或編號...">
+                <button id="search-btn">🔍</button>
+            </div>
+
+            <div class="filter-buttons" id="filter-container">
+                <button class="filter-btn active" data-type="all">全部</button>
+                <button class="filter-btn" data-type="steel">鋼</button>
+                <button class="filter-btn" data-type="fire">火</button>
+                <button class="filter-btn" data-type="water">水</button>
+                <button class="filter-btn" data-type="grass">草</button>
+                <button class="filter-btn" data-type="electric">電</button>
+                <button class="filter-btn" data-type="ice">冰</button>
+                <button class="filter-btn" data-type="dragon">龍</button>
+                <button class="filter-btn" data-type="bug">蟲</button>
+                <button class="filter-btn" data-type="poison">毒</button>
+                <button class="filter-btn" data-type="ghost">幽靈</button>
+                <button class="filter-btn" data-type="dark">惡</button>
+                <button class="filter-btn" data-type="rock">岩石</button>
+                <button class="filter-btn" data-type="flying">飛行</button>
+                <button class="filter-btn" data-type="fairy">妖精</button>
+            </div>
+        </div>
+
+        <div class="pokedex-grid" id="pokedex-grid">
+            </div>
+    </div>
+
+    <div id="monster-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+
+            <div class="modal-header">
+                <div class="nav-arrow prev-btn" id="prev-btn">❮</div>
+                <h2 id="modal-name">怪獸名稱</h2>
+                <div class="nav-arrow next-btn" id="next-btn">❯</div>
+            </div>
+
+            <div class="modal-body">
+                <div class="info-left">
+                    <div class="stat-box">
+                        <span class="stat-label">編號</span>
+                        <span class="stat-value" id="modal-id">NO.000</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">屬性</span>
+                        <div class="types-container" id="modal-types"></div>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">高度</span>
+                        <span class="stat-value">2.5 m</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">重量</span>
+                        <span class="stat-value">150.0 kg</span>
+                    </div>
+                </div>
+
+                <div class="holo-stage">
+                    <div class="holo-circle"></div>
+                    <img id="modal-img" src="" alt="Monster">
+                </div>
+
+                <div class="info-right">
+                    <h3>掃描分析</h3>
+                    <p id="modal-desc" class="desc-text">
+                        正在讀取生物特徵數據... <br>
+                        威脅等級：S <br>
+                        能量反應：高
+                    </p>
+                    <div class="stat-bar-container">
+                        <span>攻擊力</span>
+                        <div class="stat-bar"><div class="fill" style="width: 80%"></div></div>
+                    </div>
+                    <div class="stat-bar-container">
+                        <span>防禦力</span>
+                        <div class="stat-bar"><div class="fill" style="width: 60%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
